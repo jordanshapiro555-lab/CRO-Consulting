@@ -1,26 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.getElementById("mainNav");
-  const toggle = document.getElementById("navToggle");
-  const year = document.getElementById("year");
+// Simple JS for nav toggle and small niceties
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
 
-  year.textContent = new Date().getFullYear();
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-    toggle.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", toggle.classList.contains("open"));
+  navToggle.addEventListener('click', function () {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  // smooth scroll
+  // Smooth scrolling for internal links
   document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", e => {
-      const target = document.querySelector(link.getAttribute("href"));
+    link.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-        nav.classList.remove("open");
-        toggle.classList.remove("open");
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // close mobile nav after clicking
+        if (mainNav.classList.contains('open')) {
+          mainNav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
       }
     });
   });
+
+  // Set footer year
+  const year = new Date().getFullYear();
+  const el = document.getElementById('year');
+  if (el) el.textContent = year;
 });
