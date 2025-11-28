@@ -336,3 +336,9 @@ body{
     grid-template-columns: 1fr;
   }
 }
+
+.headshot {
+  height: 250px;
+  padding: 0 20px;
+  justify-content: center; 
+}
