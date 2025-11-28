@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CRO Homepage</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Brand</a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="cta small-cta" href="#contact">Free Consultation</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Conversion Rate Optimisation</h1>
+          <p class="lead">Improve engagement and turn more visitors into customers through data-led experimentation & UX improvements.</p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Get Started</a>
+            <a class="btn ghost" href="#services">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800" alt="Analytics dashboard">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="services" class="three-features container">
+      <h2 class="section-title">Designed to Increase Conversions</h2>
+      <p class="section-sub">Every change is backed by research, testing, and user psychology.</p>
+
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=600" alt="Journey map" />
+          <h3>User Journey Optimisation</h3>
+          <p>Guide your visitors more effectively with friction-free pathways built around intent.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600" alt="Website performance" />
+          <h3>Performance Enhancements</h3>
+          <p>Speed, usability, and accessibility improvements to reduce drop-off rates.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600" alt="A/B testing" />
+          <h3>Data-Driven Experiments</h3>
+          <p>Real A/B and multivariate tests provide proof rather than guesswork.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="approach" class="approach container">
+      <h2 class="section-title">Our Proven CRO Approach</h2>
+      <p class="section-sub">A structured 3-phase optimisation workflow.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h4>Analysis</h4>
+          <p>Deep data dives into user behaviour, funnels, & UX heuristics.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h4>Design & Hypotheses</h4>
+          <p>Create informed hypotheses supported by UX principles & analytics.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h4>Experimentation</h4>
+          <p>Run controlled experiments and iterate based on evidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial container">
+      <blockquote>
+        “Their CRO improvements increased our online revenue significantly. The testing framework alone paid for itself.”
+        <cite>— David Knight, CEO</cite>
+      </blockquote>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="contact-cta">
+      <div class="container contact-inner">
+        <div>
+          <h2>Ready to Improve Conversions?</h2>
+          <p>Tell us your goals — we’ll create a tailored optimisation roadmap.</p>
+        </div>
+        <a class="btn primary large" href="mailto:hello@example.com">Talk to an Expert</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Brand. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
