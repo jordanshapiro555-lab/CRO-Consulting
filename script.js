@@ -1,32 +1,72 @@
-// Simple JS for nav toggle and small niceties
+// script.js — nav toggle, smooth scroll, sticky header, active section highlight
+
 document.addEventListener('DOMContentLoaded', function () {
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
+  // Mobile nav toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
 
   navToggle.addEventListener('click', function () {
-    const isOpen = mainNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    mainNav.classList.toggle('open');
+    // animate hamburger
+    navToggle.querySelector('.hamburger').classList.toggle('open');
+  });
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mainNav.classList.contains('open')) {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Sticky header shadow on scroll
+  const header = document.getElementById('site-header');
+  const hero = document.querySelector('.hero');
+  const heroBottom = hero ? (hero.getBoundingClientRect().height - 48) : 100;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 8) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   });
 
   // Smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href.length > 1) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // close mobile nav after clicking
-        if (mainNav.classList.contains('open')) {
-          mainNav.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
+        const el = document.querySelector(href);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 72;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }
     });
   });
 
-  // Set footer year
-  const year = new Date().getFullYear();
-  const el = document.getElementById('year');
-  if (el) el.textContent = year;
+  // Highlight active nav link using IntersectionObserver
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const obsOptions = { root: null, rootMargin: '0px', threshold: 0.45 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, obsOptions);
+
+  sections.forEach(s => observer.observe(s));
+
+  // Update footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
