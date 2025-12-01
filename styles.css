@@ -418,3 +418,8 @@ body{
     display: none;
   }
 }
+
+.caseStudyHeroContainerCTAs {
+  display: flex;
+  padding: 16px;
+}
