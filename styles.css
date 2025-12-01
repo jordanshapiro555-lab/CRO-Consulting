@@ -349,3 +349,47 @@ body{
     display: none;
   }
 }
+
+/* ========================= */
+/* CONTACT PAGE — safe layer */
+/* ========================= */
+
+.contact-page .contact-form {
+  max-width: 600px;
+  padding: 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.contact-page .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.contact-page label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-page input,
+.contact-page textarea {
+  padding: 10px 12px;
+  border: 1px solid #e1e5ee;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+  outline: 0;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(15,108,204,0.15);
+}
+
+.contact-page .error-msg {
+  color: #d64545;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
