@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Jordan</title>
+    <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
 
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="https://jordanshapiro555-lab.github.io/CRO-Consulting/">Jordan's CRO Studio</a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Our Process</a></li>
+          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/case-studies" class="nav-link">Case Studies</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="section contact-page">
+    <div class="container">
+      <h1>Contact Me</h1>
+      <p class="muted" style="margin-bottom:24px; max-width:600px;">
+        Have a project in mind or want to learn more? Send a message below — I’ll get back to you as soon as I can.
+      </p>
+
+      <form 
+        class="contact-form" 
+        action="mailto:jordanshapiro555@gmail.com" 
+        method="POST" 
+        enctype="text/plain"
+        id="contactForm"
+      >
+        <div class="form-group">
+          <label for="name">Name (optional)</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+          <small class="error-msg" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="text" id="phone" name="phone" maxlength="10" placeholder="1234567890">
+          <small class="error-msg" id="phoneError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>&copy; Jordan Shapiro's CRO Studio</div>
+      <div></div>
+      <div></div>
+    </div>
+  </footer>
+
+  <!-- JS Validation -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+
+    form.addEventListener('submit', function (e) {
+      let valid = true;
+
+      // Email validation: must have "@", if not empty
+      if (emailInput.value.trim() !== "" && !emailInput.value.includes("@")) {
+        emailError.textContent = "Email must contain '@'.";
+        valid = false;
+      } else {
+        emailError.textContent = "";
+      }
+
+      // Phone validation: exactly 10 numbers if not empty
+      const phoneValue = phoneInput.value.trim();
+      if (phoneValue !== "" && !/^[0-9]{10}$/.test(phoneValue)) {
+        phoneError.textContent = "Phone must be 10 digits.";
+        valid = false;
+      } else {
+        phoneError.textContent = "";
+      }
+
+      if (!valid) e.preventDefault();
+    });
+
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.getElementById('mainNav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
