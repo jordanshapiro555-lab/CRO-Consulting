@@ -432,3 +432,13 @@ body{
   display: flex;
   padding: 16px;
 }
+
+.CaseStudyBodyContainer {
+  padding: 16px 32px;
+}
+
+.CaseStudyBreadcrumbs {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
