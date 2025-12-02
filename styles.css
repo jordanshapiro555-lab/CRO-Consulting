@@ -404,9 +404,18 @@ body{
   padding: 32px;
 }
 
+@media (min-width: 968px) {
 .caseStudyHeroContainerCopy {
   width: 50%;
   padding: 0 32px 0 0
+}
+}
+
+@media (max-width: 967px) {
+.caseStudyHeroContainerCopy {
+  width: 100%;
+  padding: 0 32px 0 0
+}
 }
 
 .caseStudyHeroContainerImage {
@@ -414,7 +423,7 @@ body{
 }
 
 @media (max-width: 967px) {
-  .caseStudyHeroContainerImage, .caseStudyHeroContainerCopy {
+  .caseStudyHeroContainerImage {
     display: none;
   }
 }
