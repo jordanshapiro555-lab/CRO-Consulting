@@ -418,7 +418,7 @@ body{
 }
 }
 
-.caseStudyHeroContainerImage, caseStudyHeroContainerImage {
+.caseStudyHeroContainerImage, .caseStudyRowContainerImage {
   width: 50%
 }
 
