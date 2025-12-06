@@ -446,3 +446,7 @@ body{
 .caseStudyRowContainerImage {
   float: left;
 }
+
+.caseStudyRow1 {
+  padding: 32px;
+}
