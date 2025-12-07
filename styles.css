@@ -424,6 +424,12 @@ body{
 }
 }
 
+@media (max-width: 652px) {
+.caseStudyRowContainerImage {
+  width: 100%
+}
+}
+
 @media (max-width: 967px) {
   .caseStudyHeroContainerImage {
     display: none;
@@ -455,6 +461,7 @@ body{
 .caseStudyRow1 {
   padding: 32px;
   background-color: aliceblue;
+  overflow: auto;
 }
 
 .caseStudyBodyHeader {
