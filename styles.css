@@ -418,8 +418,10 @@ body{
 }
 }
 
+@media (min-width: 653px) {
 .caseStudyHeroContainerImage, .caseStudyRowContainerImage {
   width: 50%
+}
 }
 
 @media (max-width: 967px) {
