@@ -443,12 +443,16 @@ body{
     flex-wrap: wrap;
 }
 
+@media (min-width: 653px) {
 .caseStudyRowContainerImage {
   float: left;
+  margin-right: 32px;
+}
 }
 
 .caseStudyRow1 {
   padding: 32px;
+  background-color: aliceblue;
 }
 
 .caseStudyBodyHeader {
