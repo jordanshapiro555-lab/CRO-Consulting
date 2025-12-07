@@ -483,4 +483,6 @@ body{
   font-size: 32px;
   justify-content: center;
   display: grid;
+  text-align: center;
+  padding: 12px;
 }
