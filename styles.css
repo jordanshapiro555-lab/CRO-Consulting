@@ -450,3 +450,11 @@ body{
 .caseStudyRow1 {
   padding: 32px;
 }
+
+.caseStudyBodyHeader {
+  color: #fff;
+  background-color: cornflowerblue;
+  font-size: 32px;
+  justify-content: center;
+  display: grid;
+}
