@@ -419,19 +419,19 @@ body{
 }
 
 @media (min-width: 653px) {
-.caseStudyHeroContainerImage, .caseStudyRowContainerImage {
+.caseStudyHeroContainerImage, .caseStudyRowContainerImage1, .caseStudyRowContainerImage2 {
   width: 50%
 }
 }
 
 @media (max-width: 652px) {
-.caseStudyRowContainerImage {
+.caseStudyRowContainerImage1, .caseStudyRowContainerImage2 {
   width: 100%
 }
 }
 
 @media (max-width: 967px) {
-  .caseStudyHeroContainerImage {
+  .caseStudyHeroContainerImage1, .caseStudyRowContainerImage2 {
     display: none;
   }
 }
@@ -452,15 +452,28 @@ body{
 }
 
 @media (min-width: 653px) {
-.caseStudyRowContainerImage {
+.caseStudyRowContainerImage1 {
   float: left;
   margin-right: 32px;
+}
+}
+
+@media (min-width: 653px) {
+.caseStudyRowContainerImage2 {
+  float: right;
+  margin-left: 32px;
 }
 }
 
 .caseStudyRow1 {
   padding: 32px;
   background-color: aliceblue;
+  overflow: auto;
+}
+
+.caseStudyRow2 {
+  padding: 32px;
+  background-color: #fff;
   overflow: auto;
 }
 
