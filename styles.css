@@ -431,7 +431,7 @@ body{
 }
 
 @media (max-width: 967px) {
-  .caseStudyHeroContainerImage1, .caseStudyRowContainerImage2 {
+  .caseStudyHeroContainerImage {
     display: none;
   }
 }
