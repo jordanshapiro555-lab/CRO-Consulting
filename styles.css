@@ -1,5 +1,4 @@
 html, body {
-  overflow-x: hidden; /* OK */
   overflow-y: visible; /* Required so sticky works */
 }
 
