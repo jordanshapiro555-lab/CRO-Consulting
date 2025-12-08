@@ -1,3 +1,12 @@
+html, body {
+  overflow-x: hidden; /* OK */
+  overflow-y: visible; /* Required so sticky works */
+}
+
+body {
+  padding-top: 100px; /* match header height */
+}
+
 /* style.css — simple, modern responsive styles */
 /* CSS variables */
 :root{
@@ -37,8 +46,10 @@ body{
 
 /* Header / nav */
 .site-header{
-  position:sticky;
+  position: fixed;
   top:0;
+  left: 0;
+  right: 0;
   z-index:40;
   background:#D5FFFF;
   backdrop-filter:saturate(140%) blur(6px);
@@ -468,13 +479,11 @@ body{
 .caseStudyRow1 {
   padding: 32px;
   background-color: aliceblue;
-  overflow: auto;
 }
 
 .caseStudyRow2 {
   padding: 32px;
   background-color: #fff;
-  overflow: auto;
 }
 
 .caseStudyBodyHeader {
@@ -485,4 +494,11 @@ body{
   display: grid;
   text-align: center;
   padding: 12px;
+}
+
+.caseStudyRow1::after,
+.caseStudyRow2::after {
+  content: "";
+  display: block;
+  clear: both;
 }
