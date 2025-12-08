@@ -452,6 +452,12 @@ body{
   padding: 16px;
 }
 
+.caseStudyBodyContainerCTAs {
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+}
+
 .CaseStudyBodyContainer {
   padding: 16px 32px;
 }
