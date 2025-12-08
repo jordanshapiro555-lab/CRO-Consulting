@@ -174,7 +174,7 @@ body{
   box-shadow:0 6px 18px rgba(11,75,216,0.12);
 }
 .btn-ghost{
-  border:1px solid #e6eefc;
+  border:1px solid (--accent-2);
   color:var(--accent-2);
   margin-left:8px;
 }
