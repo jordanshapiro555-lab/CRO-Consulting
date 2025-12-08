@@ -7,10 +7,6 @@ body {
   padding-top: 100px; /* match header height */
 }
 
-h2 {
-  scroll-margin-top: 120px;
-}
-
 /* style.css — simple, modern responsive styles */
 /* CSS variables */
 :root{
