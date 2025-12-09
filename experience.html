@@ -1,16 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jordan's Experience</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jordan's CRO Experience</title>
 
-  <!-- Google Font -->
+    <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 40px;
+    background: #fafafa;
+  }
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.45s ease;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Arrows */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+
+  /* Pagination */
+  .carousel-nav {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .carousel-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 6px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .carousel-indicator.active {
+    background: #111;
+  }
+</style>
 </head>
+
 <body>
   <!-- Header / Navigation -->
   <header class="site-header" id="site-header">
@@ -31,70 +103,90 @@
       </button>
     </div>
   </header>
+<h2>Full Carousel Example (All Required HTML Included)</h2>
 
-<!-- Hero -->
-  <div class="experienceHeroContainer">
-    <div class="experienceHeroContainerContent">
-      <div class="experienceHeroContainerContentCopy">
-        <h1>Test</h1>
-        <p>Test</p>
-        <a>Test</a>
-      </div>
+<div class="carousel">
   
-  
-  <!-- Carousel -->
-  <div id="experience-page-carousel" class="experience-page-carousel-wrapper">
-  <div class="experience-page-carousel-columns">
+  <!-- PREV BUTTON -->
+  <button class="carousel-btn prev">&#10094;</button>
 
-    <!-- Column 1 -->
-    <div class="experience-page-carousel-col experience-page-carousel-col1">
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bc2559465df78344ef_image%209.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691639d5cde5e1193d924590_svgexport-2%20(5).svg" alt="" class="experience-page-logo">
-      </div>
+  <!-- TRACK (REQUIRED!) -->
+  <div class="carousel-track">
+    
+    <!-- DUPLICATED SLIDES BELOW -->
 
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bce58134d4d35adf19_image%206.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691638d28b1f17f57380a21b_Wayfair.svg" alt="" class="experience-page-logo">
-      </div>
-
-      <!-- Repeated (to allow loop) -->
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bc2559465df78344ef_image%209.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691639d5cde5e1193d924590_svgexport-2%20(5).svg" alt="" class="experience-page-logo">
-      </div>
-
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bce58134d4d35adf19_image%206.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691638d28b1f17f57380a21b_Wayfair.svg" alt="" class="experience-page-logo">
-      </div>
+    <div class="carousel-slide">
+      <img src="https://picsum.photos/780/400?random=1" alt="Slide 1">
     </div>
 
-    <!-- Column 2 -->
-    <div class="experience-page-carousel-col experience-page-carousel-col2">
-      <!-- Content copied & cleaned — same pattern -->
-      <!-- (Not repeating here to save space, but final output will include all items.) -->
+    <div class="carousel-slide">
+      <img src="https://picsum.photos/780/400?random=2" alt="Slide 2">
     </div>
 
-    <!-- Column 3 -->
-    <div class="experience-page-carousel-col experience-page-carousel-col3">
-      <!-- Same pattern / complete block preserved -->
+    <div class="carousel-slide">
+      <img src="https://picsum.photos/780/400?random=3" alt="Slide 3">
+    </div>
+
+    <!-- duplicated items (required for seamless looping) -->
+    <div class="carousel-slide">
+      <img src="https://picsum.photos/780/400?random=1" alt="Slide 1 duplicate">
     </div>
 
   </div>
 
-  <div class="experience-page-carousel-gradient"></div>
+  <!-- NEXT BUTTON -->
+  <button class="carousel-btn next">&#10095;</button>
+
 </div>
+
+<!-- PAGINATION DOTS -->
+<div class="carousel-nav">
+  <span class="carousel-indicator active" data-slide="0"></span>
+  <span class="carousel-indicator" data-slide="1"></span>
+  <span class="carousel-indicator" data-slide="2"></span>
 </div>
-  </div>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const dots = document.querySelectorAll('.carousel-indicator');
+
+  let index = 0;
+  const slideCount = 3; // original slides before duplicates
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(d => d.classList.remove('active'));
+    dots[index % slideCount].classList.add('active');
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index++;
+    if (index > slides.length - 1) {
+      index = 0;
+    }
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index--;
+    if (index < 0) {
+      index = slideCount - 1;
+    }
+    updateCarousel();
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      index = Number(dot.dataset.slide);
+      updateCarousel();
+    });
+  });
+</script>
+
     <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -120,3 +212,4 @@
   <script src="script.js"></script>
   
 </body>
+</html>
