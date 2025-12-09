@@ -507,3 +507,14 @@ body{
   display: block;
   clear: both;
 }
+
+.appendixImage {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+.appendixSubHead {
+  font-size: 30px;
+  background-color: aliceblue;
+}
