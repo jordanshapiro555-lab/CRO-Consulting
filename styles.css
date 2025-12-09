@@ -519,3 +519,86 @@ body{
   font-size: 30px;
   background-color: aliceblue;
 }
+
+/* ========================= */
+/* Experience Page — safe layer */
+/* ========================= */
+
+/* === Carousel Wrapper === */
+.experience-page-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  height: 480px; /* adjust as needed */
+}
+
+/* Columns Container */
+.experience-page-carousel-columns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  height: 100%;
+}
+
+/* Each Column */
+.experience-page-carousel-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  animation: experience-page-vertical-loop 16s linear infinite;
+}
+
+/* All items */
+.experience-page-carousel-item {
+  width: 160px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.experience-page-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.experience-page-logo {
+  width: 120px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.experience-page-carousel-col2 {
+  animation-duration: 20s;
+  animation-direction: reverse;
+}
+
+.experience-page-carousel-col3 {
+  animation-duration: 18s;
+}
+
+/* Loop Animation */
+@keyframes experience-page-vertical-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Top/bottom Gradient Overlay */
+.experience-page-carousel-gradient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
