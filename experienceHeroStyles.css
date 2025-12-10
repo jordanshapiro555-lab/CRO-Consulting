@@ -1,0 +1,173 @@
+/* SECTION LAYOUT */
+.experienceHero_section {
+  width: 100%;
+  padding: 6rem 1.5rem;
+  background: #f5f7ff;
+  display: flex;
+  justify-content: center;
+}
+
+.experienceHero_container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* LEFT COLUMN */
+.experienceHero_left {
+  flex: 1;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* BADGE */
+.experienceHero_badge {
+  background: #e6edff;
+  color: #2444d4;
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* HEADLINE */
+.experienceHero_heading {
+  font-family: "DM Serif Text", serif;
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin: 0;
+  color: #0c1b33;
+}
+
+/* BODY */
+.experienceHero_subtext {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 460px;
+}
+
+/* CTA BUTTONS */
+.experienceHero_ctaWrap {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.experienceHero_primaryCta {
+  background: #2444d4;
+  color: white;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.experienceHero_primaryCta:hover {
+  background: #122c9f;
+}
+
+.experienceHero_secondaryCta {
+  background: white;
+  border: 2px solid #2444d4;
+  color: #2444d4;
+  padding: 0.85rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.experienceHero_secondaryCta:hover {
+  background: #eff3ff;
+}
+
+/* RIGHT COLUMN */
+.experienceHero_right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* ==== FLOATING STACK (from last message, included) ==== */
+
+.experienceHero_stackWrap {
+  position: relative;
+  width: 320px;
+  aspect-ratio: 3/4;
+  perspective: 1200px;
+}
+
+@media (max-width: 768px) {
+  .experienceHero_stackWrap {
+    width: 75%;
+  }
+}
+
+.experienceHero_stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.experienceHero_layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  transition: transform 0.6s cubic-bezier(.25,.46,.45,1),
+              opacity 0.4s ease;
+  animation: experienceHero_float 6s ease-in-out infinite;
+}
+
+/* Layer offsets */
+.experienceHero_layer:nth-child(1) { transform: rotate(-6deg) translate(-18px, -10px); z-index: 1; }
+.experienceHero_layer:nth-child(2) { transform: rotate( 4deg) translate(12px, -15px); z-index: 2; }
+.experienceHero_layer:nth-child(3) { transform: rotate(-2deg) translate(18px,  5px); z-index: 3; }
+.experienceHero_layer:nth-child(4) { transform: rotate( 5deg) translate(-5px, 15px); z-index: 4; }
+.experienceHero_layer:nth-child(5) { transform: rotate(-3deg) translate(0px,   0px); z-index: 5; }
+
+/* Floating animation */
+@keyframes experienceHero_float {
+  0%   { transform: translateY(0) rotate(var(--r)) scale(1); }
+  50%  { transform: translateY(-10px) rotate(calc(var(--r) + 1deg)) scale(1.01); }
+  100% { transform: translateY(0) rotate(var(--r)) scale(1); }
+}
+
+/* Hover focus */
+.experienceHero_stackWrap:hover .experienceHero_layer {
+  opacity: 0.7;
+  transform: translateY(10px) scale(0.95) rotate(var(--r));
+}
+
+.experienceHero_stackWrap:hover .experienceHero_layer:last-child {
+  opacity: 1;
+  transform: translateY(-8px) scale(1.06) rotate(0deg);
+}
+
+/* ===== RESPONSIVE HERO ===== */
+
+@media (max-width: 1024px) {
+  .experienceHero_container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .experienceHero_left {
+    align-items: center;
+  }
+
+  .experienceHero_ctaWrap {
+    justify-content: center;
+  }
+}
