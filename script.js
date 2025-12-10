@@ -70,3 +70,35 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+document.querySelectorAll(".experienceHero_layer").forEach((layer, i) => {
+  const baseRotations = [-6, 4, -2, 5, -3];
+  layer.style.setProperty("--r", baseRotations[i] + "deg");
+});
+
+/* Mouse parallax */
+const heroStack = document.querySelector(".experienceHero_stackWrap");
+
+heroStack.addEventListener("mousemove", (e) => {
+  const rect = heroStack.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width - 0.5;
+  const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+  document.querySelectorAll(".experienceHero_layer").forEach((layer, i) => {
+    const depth = (i + 1) * 2;
+    layer.style.transform += ` translate(${x * depth}px, ${y * depth}px) rotate(var(--r))`;
+  });
+});
+
+/* Subtle random drift */
+setInterval(() => {
+  document.querySelectorAll(".experienceHero_layer").forEach((layer, i) => {
+    const dx = (Math.random() - 0.5) * 4;
+    const dy = (Math.random() - 0.5) * 4;
+
+    layer.animate(
+      { transform: `translate(${dx}px, ${dy}px) rotate(var(--r))` },
+      { duration: 2500 + i * 700, fill: "forwards", easing: "ease-in-out" }
+    );
+  });
+}, 3200);
