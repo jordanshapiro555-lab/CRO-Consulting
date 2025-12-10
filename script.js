@@ -70,3 +70,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+
+// Experience Page Hero
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".experienceHero_imgCard");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fadeInUp");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+});
