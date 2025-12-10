@@ -1,122 +1,353 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jordan's Experience</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Experience Hero — Demo</title>
+<style>
+  /* ---------------------------
+     Base / Reset
+     --------------------------- */
+  :root{
+    --bg:#ffffff;
+    --text:#0f1724;
+    --muted:#6b7280;
+    --accent:#0f6cff;
+    --accent-2:#0b4bd8;
+    --radius:14px;
+    --max-width:1200px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  body{color:var(--text);background:var(--bg);line-height:1.35;-webkit-font-smoothing:antialiased;padding:24px 16px;}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  /* ---------------------------
+     Experience Hero container
+     --------------------------- */
+  .experienceHero-hero {
+    max-width:var(--max-width);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 420px;
+    gap:32px;
+    align-items:center;
+    padding:36px;
+  }
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  /* Left column (copy + CTAs + logos) */
+  .experienceHero-left {
+    padding-right:8px;
+  }
+  .experienceHero-eyebrow{
+    display:inline-block;
+    font-weight:600;
+    font-size:13px;
+    color:var(--accent-2);
+    margin-bottom:10px;
+  }
+  .experienceHero-title{
+    font-size:40px;
+    line-height:1.05;
+    margin:0 0 16px 0;
+    font-weight:700;
+  }
+  .experienceHero-sub{
+    color:var(--muted);
+    font-size:16px;
+    margin-bottom:20px;
+    max-width:60ch;
+  }
+  .experienceHero-ctaRow{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+  }
+  .experienceHero-cta{
+    appearance:none;
+    border:0;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .experienceHero-ctaPrimary{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:white;
+    box-shadow:0 6px 18px rgba(11,75,216,0.18);
+  }
+  .experienceHero-ctaGhost{
+    background:transparent;
+    color:var(--text);
+    border:1px solid #e6e9ef;
+  }
+
+  /* Logos row */
+  .experienceHero-logos{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  .experienceHero-logo{
+    height:36px;
+    width:auto;
+    opacity:.85;
+    filter:grayscale(0.2);
+  }
+
+  /* Right column (visual card / stats / testim) */
+  .experienceHero-right{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    align-items:stretch;
+  }
+  .experienceHero-card{
+    border-radius:16px;
+    padding:18px;
+    background:linear-gradient(180deg, rgba(15,108,255,0.04), rgba(11,75,216,0.02));
+    border:1px solid rgba(15,108,255,0.06);
+    box-shadow: 0 8px 28px rgba(15,108,255,0.04);
+  }
+  .experienceHero-statGrid{
+    display:flex;
+    gap:12px;
+    justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .experienceHero-stat{
+    text-align:left;
+  }
+  .experienceHero-stat strong{display:block;font-size:20px}
+  .experienceHero-testimonial{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .experienceHero-avatar{
+    width:48px;height:48px;border-radius:999px;flex:0 0 48px;background:#fff;display:grid;place-items:center;border:1px solid #e7eefc;
+  }
+  .experienceHero-testText{font-size:14px;color:var(--muted);}
+
+  /* small decorative hero image (placeholder) */
+  .experienceHero-visual{
+    margin-top:8px;
+    height:140px;
+    border-radius:12px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(15,108,255,0.12), transparent 8%),
+      linear-gradient(135deg,#f8fafc 0%, #ffffff 100%);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .experienceHero-visual svg{width:85%;height:100%;max-height:120px;opacity:.95}
+
+  /* hero numbers row (below hero) */
+  .experienceHero-numbers{
+    margin-top:20px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .experienceHero-number{
+    min-width:140px;
+  }
+  .experienceHero-number strong{display:block;font-size:20px}
+
+  /* ---------------------------
+     Responsive
+     --------------------------- */
+  @media (max-width:980px){
+    .experienceHero-hero{grid-template-columns:1fr; padding:20px;}
+    .experienceHero-right{order:2}
+    .experienceHero-left{order:1;padding-right:0}
+    .experienceHero-title{font-size:32px}
+  }
+  @media (max-width:520px){
+    body{padding:18px 12px;}
+    .experienceHero-title{font-size:26px}
+    .experienceHero-ctaRow{gap:8px}
+    .experienceHero-statGrid{flex-direction:column;gap:8px}
+    .experienceHero-visual{height:120px}
+    .experienceHero-hero{gap:18px;padding:16px}
+  }
+
+  /* small utility */
+  .muted{color:var(--muted);font-size:13px}
+  a.no-underline{text-decoration:none}
+</style>
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-row">
-      <a class="brand" href="https://jordanshapiro555-lab.github.io/CRO-Consulting/">Jordan's CRO Studio</a>
 
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/experience" class="nav-link">Experience</a></li>
-          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/case-studies" class="nav-link">Case Studies</a></li>
-          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/my-process" class="nav-link">My Process</a></li>
-        </ul>
-        <a class="btn btn-primary" href="https://jordanshapiro555-lab.github.io/CRO-Consulting/contact">Get in touch</a>
-      </nav>
+  <header class="experienceHero-hero" role="banner" aria-label="Experience hero">
+    <!-- LEFT: copy -->
+    <div class="experienceHero-left">
+      <div class="experienceHero-eyebrow">Start today</div>
+      <h1 class="experienceHero-title" id="experienceHero-title">
+        Invest in your career. Build real experience.
+      </h1>
+      <p class="experienceHero-sub" id="experienceHero-sub">
+        Work on remote projects with real companies to build the resume, portfolio, and confidence employers want — all from anywhere.
+      </p>
 
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
-        <span class="hamburger"></span>
-      </button>
+      <div class="experienceHero-ctaRow" role="group" aria-label="Primary actions">
+        <button id="experienceHero-ctaPrimary" class="experienceHero-cta experienceHero-ctaPrimary">Start today</button>
+        <button id="experienceHero-ctaGhost" class="experienceHero-cta experienceHero-ctaGhost">Browse externships</button>
+      </div>
+
+      <!-- logos -->
+      <div class="experienceHero-logos" aria-hidden="false" id="experienceHero-logos">
+        <!-- Using placeholders; replace src with real logos -->
+        <img class="experienceHero-logo" src="https://via.placeholder.com/140x36?text=HP" alt="Company logo 1" />
+        <img class="experienceHero-logo" src="https://via.placeholder.com/100x36?text=Pfizer" alt="Company logo 2" />
+        <img class="experienceHero-logo" src="https://via.placeholder.com/110x36?text=McD" alt="Company logo 3" />
+        <img class="experienceHero-logo" src="https://via.placeholder.com/90x36?text=Dell" alt="Company logo 4" />
+        <img class="experienceHero-logo" src="https://via.placeholder.com/80x36?text=HSBC" alt="Company logo 5" />
+      </div>
+
+      <!-- stats row -->
+      <div class="experienceHero-numbers" aria-hidden="false">
+        <div class="experienceHero-number">
+          <strong>75%</strong>
+          <div class="muted">of externs find a job outcome</div>
+        </div>
+        <div class="experienceHero-number">
+          <strong>2–5 yrs</strong>
+          <div class="muted">Experience employers increasingly expect</div>
+        </div>
+        <div class="experienceHero-number">
+          <strong>Remote</strong>
+          <div class="muted">Flexible, project-based work</div>
+        </div>
+      </div>
     </div>
+
+    <!-- RIGHT: card with testimonial + visual -->
+    <aside class="experienceHero-right" aria-labelledby="experienceHero-title" role="region">
+      <div class="experienceHero-card" id="experienceHero-card">
+        <div class="experienceHero-statGrid" id="experienceHero-statGrid">
+          <div class="experienceHero-stat">
+            <div class="muted">Get hands-on experience</div>
+            <strong>Real projects</strong>
+          </div>
+          <div class="experienceHero-stat">
+            <div class="muted">Work with</div>
+            <strong>Startups → Fortune 1000</strong>
+          </div>
+        </div>
+
+        <div class="experienceHero-testimonial" id="experienceHero-testimonial">
+          <div class="experienceHero-avatar" aria-hidden="true">
+            <!-- small placeholder avatar -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <rect width="24" height="24" rx="6" fill="#ffffff"/>
+              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="#0b4bd8" opacity="0.9"/>
+              <path d="M4 20a8 8 0 0 1 16 0" stroke="#0b4bd8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-weight:700">Addis Romero</div>
+            <div class="experienceHero-testText">"I landed multiple roles because of Extern. I presented the slide deck I built during my externship in interviews — it snowballed into offers."</div>
+            <div class="muted" style="margin-top:8px;font-size:13px">Media Intern at WPP Media</div>
+          </div>
+        </div>
+
+        <div class="experienceHero-visual" aria-hidden="true" id="experienceHero-visual">
+          <!-- simple illustrative svg -->
+          <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustration">
+            <rect x="0" y="0" width="600" height="250" rx="12" fill="white"/>
+            <g transform="translate(40,22)">
+              <rect width="240" height="140" rx="8" fill="#f8fafc"/>
+              <rect x="8" y="8" width="120" height="18" rx="6" fill="#e9f0ff"/>
+              <rect x="8" y="36" width="220" height="12" rx="6" fill="#edf4ff"/>
+              <rect x="8" y="56" width="180" height="12" rx="6" fill="#edf4ff"/>
+              <circle cx="190" cy="90" r="26" fill="#eaf4ff"/>
+            </g>
+            <g transform="translate(320,24)">
+              <rect width="200" height="140" rx="8" fill="#ffffff" stroke="#f1f5f9"/>
+              <rect x="12" y="12" width="80" height="10" rx="6" fill="#e9f0ff"/>
+              <rect x="12" y="30" width="160" height="10" rx="6" fill="#f6f9ff"/>
+              <rect x="12" y="50" width="120" height="10" rx="6" fill="#f6f9ff"/>
+              <rect x="12" y="88" width="140" height="34" rx="6" fill="#eef6ff"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- small carousel controls (work-friendly accessible) -->
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="experienceHero-prev" class="experienceHero-cta experienceHero-ctaGhost" aria-label="Previous testimonial">‹ Prev</button>
+          <button id="experienceHero-next" class="experienceHero-cta experienceHero-ctaGhost" aria-label="Next testimonial">Next ›</button>
+        </div>
+        <div class="muted" style="font-size:13px">Trusted by hundreds of companies</div>
+      </div>
+    </aside>
   </header>
 
-<!-- Hero -->
-  <div class="experienceHeroContainer">
-    <div class="experienceHeroContainerContent">
-      <div class="experienceHeroContainerContentCopy">
-        <h1>Test</h1>
-        <p>Test</p>
-        <a>Test</a>
-      </div>
-  
-  
-  <!-- Carousel -->
-  <div id="experience-page-carousel" class="experience-page-carousel-wrapper">
-  <div class="experience-page-carousel-columns">
+<script>
+/* Minimal JS to:
+   - Rotate testimonial content
+   - Simple logos marquee on small screens (touch-friendly)
+   All IDs/classes contain "experienceHero" per spec.
+*/
 
-    <!-- Column 1 -->
-    <div class="experience-page-carousel-col experience-page-carousel-col1">
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bc2559465df78344ef_image%209.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691639d5cde5e1193d924590_svgexport-2%20(5).svg" alt="" class="experience-page-logo">
-      </div>
+(function(){
+  // Testimonials dataset (replace or extend)
+  const testimonials = [
+    { name: "Addis Romero", org: "Media Intern at WPP Media", quote: "I landed multiple roles because of Extern. I presented the slide deck I built during my externship in interviews — it snowballed into offers." },
+    { name: "Alice Mollet", org: "Summer Analyst at HSBC", quote: "I was able to have tangible experiences to talk about in interviews — they loved it." },
+    { name: "Dakarai Young", org: "Analyst at Microsoft", quote: "Extern was the very first thing on my resume. It led to roles at Dell, Google, and Microsoft." }
+  ];
 
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bce58134d4d35adf19_image%206.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691638d28b1f17f57380a21b_Wayfair.svg" alt="" class="experience-page-logo">
-      </div>
+  let index = 0;
+  const elName = document.querySelector('#experienceHero-testimonial > div:nth-child(2) > div:first-child');
+  const elQuote = document.querySelector('#experienceHero-testimonial .experienceHero-testText');
+  const elOrg = document.querySelector('#experienceHero-testimonial .muted');
 
-      <!-- Repeated (to allow loop) -->
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bc2559465df78344ef_image%209.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691639d5cde5e1193d924590_svgexport-2%20(5).svg" alt="" class="experience-page-logo">
-      </div>
+  // helper to render a testimonial into card
+  function renderTestimonial(i){
+    const t = testimonials[i];
+    if(!t) return;
+    elName.textContent = t.name;
+    elQuote.textContent = t.quote;
+    elOrg.textContent = t.org;
+  }
 
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/679903bce58134d4d35adf19_image%206.jpg" alt="" class="experience-page-img">
-      </div>
-      <div class="experience-page-carousel-item">
-        <img src="https://cdn.prod.website-files.com/6573df751dbab4bb0aac132c/691638d28b1f17f57380a21b_Wayfair.svg" alt="" class="experience-page-logo">
-      </div>
-    </div>
+  document.getElementById('experienceHero-next').addEventListener('click', function(){
+    index = (index + 1) % testimonials.length;
+    renderTestimonial(index);
+  });
+  document.getElementById('experienceHero-prev').addEventListener('click', function(){
+    index = (index - 1 + testimonials.length) % testimonials.length;
+    renderTestimonial(index);
+  });
 
-    <!-- Column 2 -->
-    <div class="experience-page-carousel-col experience-page-carousel-col2">
-      <!-- Content copied & cleaned — same pattern -->
-      <!-- (Not repeating here to save space, but final output will include all items.) -->
-    </div>
+  // Auto-rotate every 7s but stop on hover/focus (accessible)
+  let rotateTimer = setInterval(()=>{ index = (index+1)%testimonials.length; renderTestimonial(index); }, 7000);
+  const card = document.getElementById('experienceHero-card');
+  card.addEventListener('mouseenter', ()=>clearInterval(rotateTimer));
+  card.addEventListener('mouseleave', ()=>rotateTimer = setInterval(()=>{ index = (index+1)%testimonials.length; renderTestimonial(index); }, 7000));
+  card.addEventListener('focusin', ()=>clearInterval(rotateTimer));
+  card.addEventListener('focusout', ()=>rotateTimer = setInterval(()=>{ index = (index+1)%testimonials.length; renderTestimonial(index); }, 7000));
 
-    <!-- Column 3 -->
-    <div class="experience-page-carousel-col experience-page-carousel-col3">
-      <!-- Same pattern / complete block preserved -->
-    </div>
+  // initial render
+  renderTestimonial(index);
 
-  </div>
+  // Simple logos swipe support for small devices
+  const logos = document.getElementById('experienceHero-logos');
+  let isDown=false, startX, scrollLeft;
+  logos.addEventListener('mousedown', (e)=>{ isDown=true; logos.classList.add('active'); startX = e.pageX - logos.offsetLeft; scrollLeft = logos.scrollLeft; });
+  logos.addEventListener('mouseleave', ()=>{ isDown=false; logos.classList.remove('active');});
+  logos.addEventListener('mouseup', ()=>{ isDown=false; logos.classList.remove('active');});
+  logos.addEventListener('mousemove', (e)=>{ if(!isDown) return; e.preventDefault(); const x = e.pageX - logos.offsetLeft; const walk = (x - startX) * 1; logos.scrollLeft = scrollLeft - walk; });
 
-  <div class="experience-page-carousel-gradient"></div>
-</div>
-</div>
-  </div>
-    <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Jordan's CRO Studio</strong>
-        <p class="muted">Optimisation & experimentation agency</p>
-      </div>
+  // touch friendly: allow horizontal scroll naturally; nothing extra required
+})();
+</script>
 
-      <div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/experience">Experience</a>
-          <a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/case-studies">Case studies</a>
-          <a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/my-process">My Process</a>
-        </nav>
-      </div>
-
-      <div>
-        <small class="muted">© <span id="year"></span>Jordan's CRO Studio</small>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  
 </body>
+</html>
