@@ -112,8 +112,8 @@
 
 /* Image cards */
 .experienceHero_imgCard {
-  width: 240px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 22px;
   overflow: hidden;
   background: #f0f0f0;
@@ -126,6 +126,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 950px) {
+.experienceHero_images {
+  display: none;
+}
 }
 
 /**************************************
