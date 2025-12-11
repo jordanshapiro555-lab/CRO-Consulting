@@ -128,12 +128,6 @@
   object-fit: cover;
 }
 
-@media (max-width: 950px) {
-.experienceHero_images {
-  display: none;
-}
-}
-
 /**************************************
   SCROLL ANIMATION
 **************************************/
@@ -157,7 +151,7 @@
   }
 
   .experienceHero_images {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
