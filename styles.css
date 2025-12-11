@@ -462,7 +462,7 @@ body{
   padding: 16px 32px;
 }
 
-.CaseStudyBreadcrumbs {
+.breadcrumbs {
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
