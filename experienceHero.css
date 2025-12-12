@@ -186,13 +186,21 @@
   padding: 16px;
 }
 
+@media (min-width: 550px) {
 .workExperienceRow {
   display: flex;
   justify-content: flex-start;
   gap: 32px;
 }
-
+}
 
 .no-bullet {
   list-style-type: none;
+}
+
+@media (max-width: 549px) {
+.workExperienceRow {
+  display: flex;
+  flex-direction: column;
+}
 }
