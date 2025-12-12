@@ -232,3 +232,11 @@
   padding-left: 1.2rem;
   margin: 0;
 }
+
+.licensesAndCertifications {
+  display: flex;
+}
+
+.licensesAndCertificationsRow {
+  display: flex;
+}
