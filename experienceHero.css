@@ -240,3 +240,17 @@
 .licensesAndCertificationsRow {
   display: flex;
 }
+
+.certLogo {
+  border-radius: 20px;
+}
+
+@media (max-width: 1080px) {
+  .licensesAndCertificationsRow {
+  flex-direction: column;
+  }
+  .certLogo {
+  width: 180;
+  height: 180;
+  }
+}
