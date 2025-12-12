@@ -1,3 +1,4 @@
+
 /**************************************
   SECTION WRAPPER
 **************************************/
@@ -237,20 +238,31 @@
   display: flex;
 }
 
+@media (min-width: 1081px), (max-width: 699px) {
 .licensesAndCertificationsRow {
   display: flex;
+}
 }
 
 .certLogo {
   border-radius: 20px;
 }
 
-@media (max-width: 1080px) {
+@media (min-width: 700px) and (max-width: 1080px) {
   .licensesAndCertificationsRow {
   flex-direction: column;
   }
+}
+
+@media (max-width: 1080px) {
   .certLogo {
-  width: 180;
-  height: 180;
+  width: 180px;
+  height: 180px;
   }
+}
+
+@media (max-width: 699px) {
+.licensesAndCertifications {
+  flex-direction: column;
+}
 }
