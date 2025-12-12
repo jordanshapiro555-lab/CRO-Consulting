@@ -181,8 +181,13 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-  
+ 
 .experienceMainContent {
   padding: 16px;
+}
+
+.workExperienceRow {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
 }
