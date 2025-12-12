@@ -70,6 +70,19 @@
   transition: background 0.25s ease;
 }
 
+.experienceHero_btnSecondary {
+  background: #fff;
+  color: #2550d0;
+  border-color: #2550d0;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  transition: background 0.25s ease;
+}
+
 .experienceHero_btnPrimary:hover {
   background: #1a3aa5;
 }
