@@ -175,8 +175,8 @@
 }
 
 .experienceBodyEmployerLogo {
-  width: 200;
-  height: 200;
+  width: 200px;
+  height: 200px;
   border-radius: 22px;
   opacity: 1;
   transform: translateY(0);
@@ -190,4 +190,9 @@
   display: flex;
   justify-content: flex-start;
   gap: 32px;
+}
+
+
+.no-bullet {
+  list-style-type: none;
 }
