@@ -238,7 +238,7 @@
   display: flex;
 }
 
-@media (min-width: 1081px), (max-width: 699px) {
+@media (min-width: 1081px), (min-width: 500px) and (max-width: 699px) {
 .licensesAndCertificationsRow {
   display: flex;
 }
