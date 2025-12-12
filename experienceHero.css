@@ -169,21 +169,28 @@
 }
 
 @media (min-width: 550px) {
-.experienceBodyEmployerLogo {
-  float: left;
-}
+  .experienceBodyEmployerLogo {
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 16px;
+  }
 }
 
+/* MOBILE: stack layout */
 @media (max-width: 549px) {
-.experienceBodyEmployerLogo {
-  justify-content: center;
-}
+  .experienceBodyEmployerLogo {
+    float: none;
+    margin: 0 auto 20px;
+    display: block;
+  }
 }
 
+/* LOGO */
 .experienceBodyEmployerLogo {
-  width: 200px;
-  height: 200px;
-  border-radius: 22px;
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
   opacity: 1;
   transform: translateY(0);
 }
@@ -192,22 +199,22 @@
   padding: 16px;
 }
 
-@media (min-width: 550px) {
 .workExperienceRow {
-  display: flex;
-  justify-content: flex-start;
-  gap: 32px;
-}
+  overflow: hidden; /* ensures float is contained */
+  line-height: 1.55;
 }
 
+/* No-bullet items (titles) */
 .no-bullet {
   list-style-type: none;
-  font-size: 24px;
+  padding-left: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
-@media (max-width: 549px) {
-.workExperienceRow {
-  display: flex;
-  flex-direction: column;
-}
+.experienceList {
+  padding-left: 1.2rem;
+  margin: 0;
 }
