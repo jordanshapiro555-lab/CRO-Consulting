@@ -202,7 +202,7 @@
 .workExperienceRow {
   overflow: hidden; /* ensures float is contained */
   line-height: 1.55;
-  padding: 0 32px;
+  padding: 0 48px;
 }
 
 /* No-bullet items (titles) */
