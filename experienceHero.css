@@ -244,6 +244,12 @@
 }
 }
 
+@media (min-width: 1081px) {
+.licensesAndCertificationsRow {
+  padding: 16px 0;
+}
+}
+
 .certLogo {
   border-radius: 20px;
 }
