@@ -298,4 +298,6 @@ tr:nth-child(even) {
 
 .skillsTableHeadRow {
   background-color: var(--accent-2);
+  text: #fff;
+  padding: 16px 0;
 }
