@@ -285,5 +285,9 @@
 }
 
 tr:nth-child(even) {
-  background-color: #f9fafb;
+  background-color: #D5FFFF;
+}
+
+.skillsTableItem {
+  border: 1px solid #000;
 }
