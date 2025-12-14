@@ -254,6 +254,12 @@
   }
 }
 
+@media (min-width: 700px) {
+  .licensesAndCertificationsRow {
+  width: 50%;
+  }
+}
+
 @media (max-width: 1080px) {
   .certLogo {
   width: 180px;
