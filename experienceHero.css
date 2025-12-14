@@ -294,10 +294,124 @@ tr:nth-child(even) {
 
 .skillsTable {
   width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .skillsTableHeadRow {
   background-color: var(--accent-2);
-  text: #fff;
+  color: #fff;
   padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+
+  /* ===== Table → Card Reset ===== */
+  .skillsTable,
+  .skillsTable tbody,
+  .skillsTable tr,
+  .skillsTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .skillsTable thead {
+    display: none;
+  }
+
+  /* ===== Card Container ===== */
+  .skillsTable tr {
+    position: relative;
+    margin-bottom: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* Accordion default (collapsed) */
+    max-height: 48px;
+    transition:
+      max-height 360ms ease,
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+
+  /* Hover / active affordance */
+  .skillsTable tr:active {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-color: #d1d5db;
+  }
+
+  /* ===== Expand Trigger ===== */
+  .skillsTable tr:focus-within,
+  .skillsTable tr:hover {
+    max-height: 480px; /* safe max for content */
+  }
+
+  /* ===== Chevron Indicator ===== */
+  .skillsTable tr::after {
+    content: "▾";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    transition: transform 240ms ease;
+  }
+
+  .skillsTable tr:focus-within::after,
+  .skillsTable tr:hover::after {
+    transform: rotate(180deg);
+  }
+
+  /* ===== Cell Layout ===== */
+  .skillsTable td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+
+    /* Content animation */
+    opacity: 0;
+    transform: translateY(6px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  /* Reveal content when expanded */
+  .skillsTable tr:focus-within td,
+  .skillsTable tr:hover td {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== Category Labels ===== */
+  .skillsTable td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+    flex-shrink: 0;
+  }
+
+  /* ===== Empty Cell Cleanup ===== */
+  .skillsTable td:empty {
+    display: none;
+  }
+
+  /* ===== Reduced Motion Support ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .skillsTable tr,
+    .skillsTable td {
+      transition: none;
+      transform: none;
+      opacity: 1;
+      max-height: none;
+    }
+
+    .skillsTable tr::after {
+      transition: none;
+    }
+  }
 }
