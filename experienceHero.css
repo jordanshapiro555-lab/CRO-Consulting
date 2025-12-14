@@ -288,6 +288,14 @@ tr:nth-child(even) {
   background-color: #D5FFFF;
 }
 
-.skillsTableItem {
+.skillsTableItem .skillsTableHeadRow {
   border: 1px solid #000;
+}
+
+.skillsTable {
+  width: 100%;
+}
+
+.skillsTableHeadRow {
+  background-color: var(--accent-2);
 }
