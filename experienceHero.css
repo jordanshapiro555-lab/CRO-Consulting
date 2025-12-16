@@ -313,6 +313,7 @@ tr:nth-child(even) {
     border-color: #000;
     border-radius: 20px;
     padding: 16px;
+    cursor: pointer;
   }
   .mobileSkillParent ::after {
     content: ">";
@@ -320,10 +321,16 @@ tr:nth-child(even) {
     right: 32px;
     color: #0f6cff;
   }
+  .skillsTableMobile {
+      font-weight: 600;
+  }
+  .skillsTableMobile > summary::-webkit-details-marker {
+  display: none;
+}
 }
 
 @media (min-width: 769px) {
 .skillsTableMobile {
-  display:none
+  display:none;
 }
 }
