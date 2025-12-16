@@ -314,6 +314,7 @@ tr:nth-child(even) {
     border-radius: 20px;
     padding: 16px;
     cursor: pointer;
+    margin: 16px;
   }
   .mobileSkillParent ::after {
     content: ">";
