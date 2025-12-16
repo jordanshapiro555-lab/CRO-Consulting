@@ -312,9 +312,13 @@ tr:nth-child(even) {
     border: solid 1px;
     border-color: #000;
     border-radius: 20px;
+    padding: 16px;
   }
-  .mobileSkillParent:after {
-content: ">";
+  .mobileSkillParent ::after {
+    content: ">";
+    position: absolute;
+    right: 32px;
+    color: #0f6cff;
   }
 }
 
