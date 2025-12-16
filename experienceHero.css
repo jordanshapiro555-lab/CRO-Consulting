@@ -303,3 +303,23 @@ tr:nth-child(even) {
   color: #fff;
   padding: 16px 0;
 }
+
+@media (max-width: 768px) {
+.skillsTable {
+  display:none
+}
+  .mobileSkillParent {
+    border: solid 1px;
+    border-color: #000;
+    border-radius: 20px;
+  }
+  .mobileSkillParent:after {
+content: ">";
+  }
+}
+
+@media (min-width: 769px) {
+.skillsTableMobile {
+  display:none
+}
+}
