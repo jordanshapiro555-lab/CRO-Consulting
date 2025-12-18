@@ -773,7 +773,7 @@ body{
   display: flex;
   align-items: center;
   gap: 32px;
-  animation: homeBrandsVerticalScroll 14s linear infinite;
+  animation: homeBrandsHorizontalScroll 18s linear infinite;
 }
 
 @keyframes homeBrandsHorizontalScroll {
