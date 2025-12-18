@@ -789,3 +789,7 @@ body{
 .homeHeroBrands:hover .homeBrandsTrack {
   animation-play-state: paused;
 }
+
+.formContainer {
+  padding: 24px 0;
+}
