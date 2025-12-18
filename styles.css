@@ -752,13 +752,16 @@ body{
   justify-content: space-around;
   background-color: aliceblue;
   overflow: hidden;
+  width: 100%
+  Padding: 24px 0;
 }
 
 .homeBrandsCarousel {
-  width: 140px;
-  height: auto;
+  height: 100px;
+  width: auto;
   object-fit: contain;
   opacity: 0.9;
+  flex-shrink: 0;
 }
 
 .homeBrandsCarouselCopy {
@@ -767,17 +770,17 @@ body{
 
 .homeBrandsTrack {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 32px;
   animation: homeBrandsVerticalScroll 14s linear infinite;
 }
 
-@keyframes homeBrandsVerticalScroll {
+@keyframes homeBrandsHorizontalScroll {
   0% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(-50%);
+    transform: translateX(-50%);
   }
 }
 
