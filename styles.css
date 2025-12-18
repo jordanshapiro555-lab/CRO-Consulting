@@ -142,7 +142,7 @@ body{
 
 /* HERO */
 .hero{
-  padding:64px 0;
+  padding:64px 0 0 0;
   border-bottom:1px solid #f0f2f6;
 }
 .hero-grid{
@@ -359,7 +359,7 @@ body{
 }
 
 .headshot {
-  height: 300px;
+  height: 400px;
   border-radius: 150px;
   justify-content: center; 
 }
