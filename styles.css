@@ -752,7 +752,7 @@ body{
   justify-content: space-around;
   background-color: aliceblue;
   overflow: hidden;
-  width: 100%
+  width: 100%;
   Padding: 24px 0;
 }
 
@@ -766,6 +766,7 @@ body{
 
 .homeBrandsCarouselCopy {
   justify-content: center;
+  display: flex;
 }
 
 .homeBrandsTrack {
