@@ -751,12 +751,36 @@ body{
   display: flex;
   justify-content: space-around;
   background-color: aliceblue;
+  overflow: hidden;
 }
 
 .homeBrandsCarousel {
-  height: 100px
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
 }
 
 .homeBrandsCarouselCopy {
   justify-content: center;
+}
+
+.homeBrandsTrack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  animation: homeBrandsVerticalScroll 14s linear infinite;
+}
+
+@keyframes homeBrandsVerticalScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.homeHeroBrands:hover .homeBrandsTrack {
+  animation-play-state: paused;
 }
