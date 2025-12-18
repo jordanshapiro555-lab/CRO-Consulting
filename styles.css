@@ -746,3 +746,12 @@ body{
     font-size: 1rem;
   }
 }
+
+.homeHeroBrands {
+  display: flex;
+  justify-content: space-around;
+}
+
+.homeBrandsCarousel {
+  height: 100px
+}
