@@ -180,6 +180,15 @@ body{
   margin-left:8px;
 }
 
+.homeHeroBullet::marker {
+  content: "☑️ ";
+}
+
+.homeHeroBullet {
+  margin-left: -16px;
+}
+
+
 /* hero media mock */
 .mock-screen{
   border-radius:14px;
