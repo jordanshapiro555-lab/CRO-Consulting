@@ -317,6 +317,7 @@ body{
 .blog-grid-media {
   height: 180px;
   overflow: hidden;
+  display: grid;
 }
 
 .blog-grid-media img {
