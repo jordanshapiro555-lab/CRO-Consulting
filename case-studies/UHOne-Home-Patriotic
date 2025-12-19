@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Increasing Home CVR By Aligning Content To ICP</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="https://jordanshapiro555-lab.github.io/CRO-Consulting/">Jordan's CRO Studio</a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/experience" class="nav-link">Experience</a></li>
+          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/case-studies" class="nav-link">Case Studies</a></li>
+          <li><a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/my-process" class="nav-link">My Process</a></li>
+        </ul>
+        <a class="btn btn-primary" href="https://jordanshapiro555-lab.github.io/CRO-Consulting/contact">Get in touch</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  
+  <div class="caseStudyHeroContainer">
+    <div class="caseStudyHeroContainerCopy">
+      <h1>How I Drove $8.7MM Incremental Dollars to UHOne</h1>
+      <p>I drove $8.7MM incremental dollars to UHOne with a strategic approach that focused on a more streamlined purchase journey and high value product promotion</p>
+      <div class="caseStudyHeroContainerCTAs">
+        <a class="btn btn-primary" href="../assets/case-studies/UHOne2024/FullUHOne2024CaseStudy.pdf" download=""> Get The Full Case</a>
+        <a class="btn btn-ghost" href="https://jordanshapiro555-lab.github.io/CRO-Consulting/contact">Contact me</a>
+      </div>
+    </div>
+      <img class="caseStudyHeroContainerImage" src="../assets/case-studies/UHOne2024/UHOne2024KPIsByQuarter.png">
+  </div>
+  
+  <!-- Page Body -->
+
+  <div class="CaseStudyBodyContainer">
+
+<!-- Breadcrumbs -->
+    
+<div class="breadcrumbs">
+    <a class="cta" href="#yearInReview">Year In Review</a>
+    <a class="cta" href="#definingSuccess">Defining Success</a>
+    <a class="cta" href="#revenueAttribution">Revenue Attribution &amp; Reporting</a>
+    <a class="cta" href="#appendix">Appendix</a>
+
+</div>
+      <div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/experience">Experience</a>
+          <a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/case-studies">Case studies</a>
+          <a href="https://jordanshapiro555-lab.github.io/CRO-Consulting/my-process">My Process</a>
+        </nav>
+      </div>
+
+      <div>
+        <small class="muted">© <span id="year">2025</span>Jordan's CRO Studio</small>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="../script.js"></script>
+</body>
+</html>
