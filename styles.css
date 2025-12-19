@@ -422,6 +422,7 @@ body{
 .caseStudyHeroContainer {
   display: flex;
   padding: 32px;
+  justify-content: center;
 }
 
 @media (min-width: 968px) {
