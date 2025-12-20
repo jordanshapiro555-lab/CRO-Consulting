@@ -752,10 +752,14 @@ body{
 .homeHeroBrands {
   display: flex;
   justify-content: space-around;
-  background-color: aliceblue;
+  background-color: #D5FFFF;
   overflow: hidden;
   width: 100%;
   Padding: 24px 0;
+}
+
+.homeHero {
+  background-color: aliceblue;
 }
 
 .homeBrandsCarousel {
