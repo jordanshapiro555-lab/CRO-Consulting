@@ -482,6 +482,7 @@ body{
 .caseStudyRowContainerImage1 {
   float: left;
   margin-right: 32px;
+  padding-right: 16px;
 }
 }
 
