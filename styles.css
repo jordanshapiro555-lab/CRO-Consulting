@@ -801,3 +801,15 @@ body{
 .formContainer {
   padding: 24px 0;
 }
+
+.caseStudyTallRow {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.caseStudyTallRowImageDiv {
+  display: flex;
+  justify-content: center;
+}
