@@ -807,9 +807,17 @@ body{
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
+  padding: 16px;
+  gap: 16px;
 }
 
 .caseStudyTallRowImageDiv {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 700px){
+.caseStudyTallRowImageDiv {
+  height: 600px;
+}
 }
