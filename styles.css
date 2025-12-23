@@ -824,6 +824,6 @@ body{
 
 @media (max-width: 450px){
 .personaSummaryImg {
-  max-height: 200px;
+  max-height: 200px !important;
 }
 }
